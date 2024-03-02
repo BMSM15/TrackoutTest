@@ -7,11 +7,10 @@ const cokkieSession = require('cookie-session');
 const passportSetup = require('./passport');
 const authRoute = require('./routes/auth');
 require("dotenv").config();
-const uri = "mongodb+srv://brunomiguelmartins1522:bmBrm9TH2R7iqL5H@cluster0.h7hhjiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 async function connect() {
   try {
-    await mongoose.connect(uri);
+    await mongoose.connect(process.env.URI);
     console.log("Connect to MongoDB");
   } catch (error) {
     console.error(error);
