@@ -35,13 +35,16 @@ const Login = () => {
   };*/
 
   const googleAuth = () => {
-    window.open(`${process.env.REACT_APP_API_URL}/auth/google`, "_self");
+    window.open(
+      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
+      "_self"
+    );
   };
 
   return (
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>
-        <form
+        <div
           className={styles.form_container}
           //onSubmit={handleSubmit(onSubmit)}
         >
@@ -50,7 +53,7 @@ const Login = () => {
             Sign into <br></br> your account
           </h1>
           <div className={styles.form_container_labels}>
-            <button type="submit" className={styles.google_btn}>
+            <button className={styles.google_btn} onClick={googleAuth}>
               <img
                 src={logo_google}
                 alt="Logo"
@@ -92,17 +95,13 @@ const Login = () => {
                 Sign In
               </button>*/
               //) : (
-              <button
-                type="submit"
-                className={styles.signin_btn}
-                onClick={googleAuth}
-              >
+              <button type="submit" className={styles.signin_btn}>
                 Sign in
               </button>
               //)
             }
           </div>
-        </form>
+        </div>
         <div className={styles.login_info_container}>
           <h1>
             Your Music <br></br> Your Control

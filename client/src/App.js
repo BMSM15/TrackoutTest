@@ -12,10 +12,10 @@ import { history } from "./_helpers";
 import { PrivateRoute } from "./components/PrivateRoute";
 import axios from "axios";
 
+
 function App() {
   history.navigate = useNavigate();
   history.location = useLocation();
-  const [backendData, setBackData] = useState(null);
 
   const [user, setUser] = useState(null);
 
@@ -24,8 +24,8 @@ function App() {
       const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
       const { data } = await axios.get(url, {withCredentials: true});
       setUser(data.user._json);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   };
   
@@ -34,11 +34,12 @@ function App() {
   }, [])
 
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={user ? <Navigate to = "/" /> : <Login />} />
-      <Route path='/'element={user ? <Home user={user} /> : <Navigate to = "/login" />} />
-    </Routes>
+    <div className="container">
+      <Routes>
+        <Route exact path="/login" element={user ? <Navigate to = "/" /> : <Login />} />
+        <Route exact path='/'element={user ? <Home user={user} /> : <Navigate to = "/login" />} />
+      </Routes>
+    </div>
   );
 }
 
