@@ -3,10 +3,6 @@
   src: url(../../fonts/Manrope-Regular.ttf);
 }
 
-.nav_container {
-  display: none;
-}
-
 .login_container {
   background: url(../../assets/images/bg_login.png);
   background-repeat: no-repeat;
@@ -45,7 +41,7 @@
   font-size: 20px;
   font-weight: 600;
   color: #fff;
-  width: 50%;
+  width: 100%;
   padding: 10px;
   vertical-align: middle;
 }
@@ -61,7 +57,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .form_container_division h2 {
@@ -83,6 +79,9 @@
 }
 
 .logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   width: 104px;
   height: 70px;
   margin-top: 50px;
@@ -110,7 +109,17 @@
 .form_container_labels {
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  align-items: start;
   margin-top: 100px;
+}
+
+.form_container_login {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 90%;
 }
 
 .input {
@@ -133,15 +142,17 @@
 }
 
 .signin_btn {
+  display: flex;
   border-radius: 10px;
   opacity: 0.9;
   background: linear-gradient(0deg, #2379b5 0%, #2379b5 100%),
     rgba(138, 138, 138, 0.3);
   border: none;
-  width: 30%;
+  width: 80%;
   height: 50px;
   margin-top: 20px;
-  margin-left: 10%;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-family: "Manrope";
   font-size: 20px;
@@ -279,9 +290,5 @@
   .form_container {
     justify-content: center;
     align-items: center;
-  }
-
-  .logo {
-    margin-left: 150px;
   }
 }

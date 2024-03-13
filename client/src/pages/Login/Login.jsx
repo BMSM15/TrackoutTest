@@ -66,40 +66,25 @@ const Login = () => {
               <h2>OR</h2>
               <hr className={styles.line}></hr>
             </div>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              //onChange={handleChange}
-              //value={data.email}
-              className={styles.input}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              //onChange={handleChange}
-              //value={data.password}
-              className={styles.input}
-            />
-            {
-              /*authError && (
-              <div className={styles.error_msg}>{authError.message}</div>
-            )}
-            {isSubmitting ? (
-              <button
-                type="submit"
-                className={styles.signin_btn}
-                disabled={true}
-              >
-                Sign In
-              </button>*/
-              //) : (
-              <button type="submit" className={styles.signin_btn}>
-                Sign in
-              </button>
-              //)
-            }
+            <div className={styles.form_container_login}>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                className={styles.input}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                className={styles.input}
+              />
+              {
+                <button type="submit" className={styles.signin_btn}>
+                  Sign in
+                </button>
+              }
+            </div>
           </div>
         </div>
         <div className={styles.login_info_container}>

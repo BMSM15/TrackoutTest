@@ -9,7 +9,12 @@
   flex-shrink: 0;
   margin: 20px 0px 20px 50px;
 }
+
 .nav_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -19,6 +24,33 @@
   width: 100%;
 }
 
+.nav_avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 50px 20px 0;
+}
+
+.nav_avatar a {
+  font-family: "Manrope";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 128%; /* 38.4px */
+  letter-spacing: -0.6px;
+  color: #fff;
+  margin-right: 40px;
+  text-decoration: none;
+}
+
+.nav_avatar img {
+  border-radius: 1500px;
+  border: 4px solid #fcfcfc;
+  width: 60px;
+  height: 60px;
+}
+
 .home_container {
   display: flex;
   flex-direction: column;
@@ -26,6 +58,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  height: 100%;
   flex-shrink: 0;
 }
 
@@ -40,6 +73,7 @@
   text-transform: uppercase;
   color: #fff;
   margin-top: 100px;
+  position: relative;
 }
 
 .home_form_container {
@@ -51,6 +85,7 @@
   opacity: 0.7;
   background: rgba(138, 138, 138, 0.5);
   padding-left: 50px;
+  padding-right: 50px;
   margin-left: 100px;
   margin-right: 100px;
   margin-bottom: 100px;
@@ -74,7 +109,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_form_container hr {
+.hr1 {
   position: absolute;
   width: 150px;
   height: 1px;
@@ -88,29 +123,52 @@
   margin-left: 150px;
 }
 
-.home_personal_details {
+.hr2 {
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  opacity: 0.5;
+  background: #fff;
+  box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
+  align-items: start;
+  justify-content: start;
+  left: 0;
+  top: 30px;
+}
+
+.home_personal {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
   width: 100%;
 }
 
-.home_personal_detail_box {
+.home_personal_details {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
+  flex-wrap: wrap;
+  width: min-content;
 }
 
 .home_personal_details2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-left: 240px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.home_personal_details_box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
 }
 
 .home_personal_details_box h5 {
@@ -140,30 +198,22 @@
   margin-bottom: 20px;
 }
 
-.home_personal_details3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-bottom: 50px;
-}
-
 .submit_btn {
+  display: flex;
   border-radius: 20px;
   border: 1px solid #d9d9d9;
   opacity: 0.9;
   background: linear-gradient(0deg, #2379b5 0%, #2379b5 100%),
     rgba(138, 138, 138, 0.3);
-  padding: 0 60px 0 60px;
-  align-items: end;
-  justify-content: end;
+  padding: 0 20px 0 20px;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Manrope";
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 80px; /* 400% */
+  line-height: 50px; /* 400% */
   letter-spacing: 1.6px;
   color: #fff;
+  width: 40%;
 }
