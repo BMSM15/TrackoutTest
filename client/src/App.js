@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
+import "./App.css";
 import { history } from "./_helpers";
 import { PrivateRoute } from "./components/PrivateRoute";
 import axios from "axios";

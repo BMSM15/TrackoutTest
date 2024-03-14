@@ -79,11 +79,13 @@ const Login = () => {
                 name="password"
                 className={styles.input}
               />
-              {
-                <button type="submit" className={styles.signin_btn}>
-                  Sign in
-                </button>
-              }
+              <div className={styles.divbutton}>
+                {
+                  <button type="submit" className={styles.signin_btn}>
+                    Sign in
+                  </button>
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -98,18 +100,20 @@ const Login = () => {
             </p>
           </div>
           <div className={styles.description2}>
-            <hr className={styles.line2}></hr>
+            <div className={styles.linediv}>
+              <hr className={styles.line2}></hr>
+            </div>
             <div className={styles.description2_group_text}>
               <div className={styles.description2_text}>
-                <h1>Transparency</h1>
+                <p>Transparency</p>
                 <div>Know where all royalties really come from.</div>
               </div>
               <div className={styles.description2_text}>
-                <h1>Proof of Ownership</h1>
+                <p>Proof of Ownership</p>
                 <div>Get your D-ID on chain.</div>
               </div>
               <div className={styles.description2_text}>
-                <h1>One House Only</h1>
+                <p>One House Only</p>
                 <div>Manage all your rights in one place.</div>
               </div>
             </div>

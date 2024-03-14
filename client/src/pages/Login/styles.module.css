@@ -10,8 +10,9 @@
   width: 100%;
   height: 100vh;
   flex-shrink: 0;
-  padding: 150px;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login_form_container {
@@ -22,7 +23,7 @@
 }
 
 .form_container {
-  width: 92%;
+  width: 788px;
   height: 870px;
   flex-shrink: 0;
   opacity: 0.7;
@@ -41,9 +42,8 @@
   font-size: 20px;
   font-weight: 600;
   color: #fff;
-  width: 100%;
+  width: 60%;
   padding: 10px;
-  vertical-align: middle;
 }
 
 .logo_google {
@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: 60%;
 }
 
 .form_container_division h2 {
@@ -122,6 +122,13 @@
   width: 90%;
 }
 
+.divbutton {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .input {
   border-radius: 20px;
   border: 1px solid #d9d9d9;
@@ -135,7 +142,7 @@
   padding: 10px;
   color: #fff;
   margin-bottom: 20px;
-  width: 100%;
+  width: 65%;
 }
 ::placeholder {
   color: #fff;
@@ -164,7 +171,7 @@
 
 .login_info_container {
   position: relative;
-  width: 100%;
+  width: 1000px;
   height: 100%;
   flex-shrink: 0;
   border-radius: 0px 20px 20px 0px;
@@ -216,31 +223,38 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  margin-top: 200px;
+  align-items: start;
+  padding-top: 50px;
+  padding-left: 170px;
 }
 
 .line2 {
   width: 1px;
+  height: 400px;
   opacity: 0.3;
   background: #fff;
   box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
   flex-shrink: 1;
-  margin-left: 100px;
+}
+
+.linediv {
+  width: 50px;
+  height: 100%;
 }
 
 .description2_group_text {
   display: flex;
   flex-direction: column;
-  flex-shrink: 1;
-  margin-right: 100px;
 }
 
 .description2_text {
   display: flex;
   flex-direction: row;
+  justify-content: start;
+  align-items: center;
 }
 
-.description2_text h1 {
+.description2_text p {
   font-family: "Manrope";
   font-size: 40px;
   font-style: normal;
