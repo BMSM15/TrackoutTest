@@ -31,7 +31,7 @@ function App() {
     <div className="container">
       <Routes>
         <Route exact path="/login" element={user ? <Navigate to = "/" /> : <Login />} />
-        <Route exact path='/home'element={user ? <Home user={user} /> : <Home />} />
+        <Route exact path='/'element={user ? <Home user={user} /> : <Navigate to = "/login"/> } />
       </Routes>
     </div>
   );

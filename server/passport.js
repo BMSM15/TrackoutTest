@@ -8,6 +8,7 @@ passport.use(
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
+      scope: ["profile", "email"],
     },(accessToken, refreshToken, profile, callback) => {
       User.findOne({ googleId: profile.id }).then(currentUser => {
         if (currentUser) {

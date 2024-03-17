@@ -169,6 +169,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
+  width: 100%;
 }
 
 .home_personal_details_box h5 {
@@ -193,6 +194,54 @@
   font-style: normal;
   font-weight: 600;
   line-height: 10px;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.inputdate {
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+  opacity: 0.7;
+  background: rgba(138, 138, 138, 0.3);
+  font-family: "Manrope";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.inputfile {
+  display: none;
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+  opacity: 0.7;
+  background: rgba(138, 138, 138, 0.3);
+  font-family: "Manrope";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.inputfile2 {
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+  opacity: 0.7;
+  background: rgba(138, 138, 138, 0.3);
+  font-family: "Manrope";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
   padding: 10px;
   color: #fff;
   margin-bottom: 20px;
