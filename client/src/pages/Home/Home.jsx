@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./styles.module.css";
-import { Avatar } from "@mui/material";
 import { SlArrowRightCircle } from "react-icons/sl";
-import { Link } from "react-router-dom";
 import { logo, logo_google } from "../../assets/images";
 
 const Home = (userDetails) => {
@@ -20,7 +18,8 @@ const Home = (userDetails) => {
           <a href="http://localhost:3000" onClick={logout}>
             About
           </a>
-          <img className={styles.avatar} src={user.picture} alt="Avatar" />
+
+          {/*<img className={styles.avatar} src={user.picture} alt="Avatar" />*/}
         </div>
       </div>
       <div className={styles.home_container}>
@@ -36,8 +35,6 @@ const Home = (userDetails) => {
                   type="name"
                   placeholder="Enter your name"
                   name="name"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -47,8 +44,6 @@ const Home = (userDetails) => {
                   type="country"
                   placeholder="Where you’re based"
                   name="country"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -60,8 +55,6 @@ const Home = (userDetails) => {
                   type="name"
                   placeholder="Enter your artist name"
                   name="name"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -71,8 +64,6 @@ const Home = (userDetails) => {
                   type="birthDate"
                   placeholder="dd/mm/aaaa"
                   name="birthDate"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -84,8 +75,6 @@ const Home = (userDetails) => {
                   type="email"
                   placeholder="Enter your email"
                   name="email"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -95,8 +84,6 @@ const Home = (userDetails) => {
                   type="musicRole"
                   placeholder="Label"
                   name="musicRole"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -113,8 +100,6 @@ const Home = (userDetails) => {
                   type="labelName"
                   placeholder="Enter your label name"
                   name="labelName"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -124,8 +109,6 @@ const Home = (userDetails) => {
                   type="name"
                   placeholder="Profile Image (PNG/JPG)"
                   name="name"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -137,8 +120,6 @@ const Home = (userDetails) => {
                   type="ISRCAgency"
                   placeholder="ASCAP (USA)"
                   name="ISRCAgency"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>
@@ -150,8 +131,6 @@ const Home = (userDetails) => {
                   type="name"
                   placeholder="Spotify, Instagram, Website"
                   name="name"
-                  //onChange={handleChange}
-                  //value={data.email}
                   className={styles.input}
                 />
               </div>

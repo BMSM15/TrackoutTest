@@ -1,39 +1,7 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-import { useForm } from "react-hook-form";
-import { useSelector, useDispatch } from "react-redux";
-import { history } from "../../_helpers";
-import { authActions } from "../../_store";
 import { logo, logo_google } from "../../assets/images";
 
 const Login = () => {
-  /*const [data, setData] = useState({ email: "", password: "", code: "" });
-  const { register, handleSubmit, formState } = useForm();
-  const { errors, isSubmitting } = formState;
-  const dispatch = useDispatch();
-  const authUser = useSelector((x) => x.auth.user);
-  const authError = useSelector((x) => x.auth.error);
-
-  useEffect(() => {
-    // redirect to home if already logged in
-    if (authUser) history.navigate("/");
-  }, []);
-
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
-
-  const onSubmit = async (e) => {
-    return dispatch(
-      authActions.login({ email: data.email, password: data.password })
-    );
-  };
-
-  const handleAccessCode = (e) => {
-    return dispatch(authActions.loginViaAccessCode({ accessCode: data.code }));
-  };*/
-
   const googleAuth = () => {
     window.open(
       `${process.env.REACT_APP_API_URL}/auth/google/callback`,
@@ -44,10 +12,7 @@ const Login = () => {
   return (
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>
-        <div
-          className={styles.form_container}
-          //onSubmit={handleSubmit(onSubmit)}
-        >
+        <div className={styles.form_container}>
           <img src={logo} alt="Logo" className={styles.logo} />
           <h1>
             Sign into <br></br> your account
