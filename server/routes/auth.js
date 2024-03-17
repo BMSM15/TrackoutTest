@@ -11,7 +11,7 @@ router.get("/login/success", (req, res) => {
   }else {
     res.status(403).json({ 
       error: true, 
-      message: "Not Authorized" 
+      message: "Not Authorized"
     });
   }
 });
@@ -23,11 +23,11 @@ router.get("/login/failed", (req, res) => {
 });
 
 router.get(
-    "/google/callback", 
-    passport.authenticate("google", { 
+  "/google/callback", 
+  passport.authenticate("google", { 
     successRedirect: process.env.CLIENT_URL, 
-    failureRedirect: "/login/failed" 
-    })
+    failureRedirect: "/login/failed", 
+  }),
 );
 
 router.get("/google", passport.authenticate("google", ["profile", "email"]));
