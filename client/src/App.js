@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
-import "./App.css";
 import axios from "axios";
 
 function App() {
@@ -10,20 +9,19 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getUser = async () => {
+    const fetchUser = async () => {
       try {
         const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
         const { data } = await axios.get(url, { withCredentials: true });
-        const { user } = data;
-        setUser(user);
-      } catch (err) {
-        console.log(err);
+        setUser(data.user);
+      } catch (error) {
+        console.error("Error fetching user:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    getUser();
+    fetchUser();
   }, []);
 
   if (loading) {
