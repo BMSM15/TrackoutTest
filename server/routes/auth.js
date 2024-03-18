@@ -1,33 +1,34 @@
-const router = require('express').Router();
-const passport = require('passport');
+const router = require("express").Router();
+const passport = require("passport");
 
-router.get("/login/success", (req, res) => { 
-  if(req.user){
-    res.status(200).json({ 
-      error: false, 
-      message: "Suceessfully authenticated", 
+router.get("/login/success", (req, res) => {
+  if (req.user) {
+    res.status(200).json({
+      error: false,
+      message: "Suceessfully authenticated",
       user: req.user,
     });
-  }else {
-    res.status(403).json({ 
-      error: true, 
-      message: "Not Authorized"
+  } else {
+    res.status(403).json({
+      error: true,
+      message: "Not Authorized",
     });
   }
 });
 
 router.get("/login/failed", (req, res) => {
-  res.status(401).json({ 
-    error: true, 
-    message: "user failed to authenticate." });
+  res.status(401).json({
+    error: true,
+    message: "user failed to authenticate.",
+  });
 });
 
 router.get(
-  "/google/callback", 
-  passport.authenticate("google", { 
-    successRedirect: process.env.CLIENT_URL, 
-    failureRedirect: "/login/failed", 
-  }),
+  "/google/callback",
+  passport.authenticate("google", {
+    successRedirect: process.env.CLIENT_URL,
+    failureRedirect: "/login/failed",
+  })
 );
 
 router.get("/google", passport.authenticate("google", ["profile", "email"]));
