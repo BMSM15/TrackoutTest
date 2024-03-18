@@ -1,46 +1,46 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const FormSchema = new mongoose.Schema({
   fullName: {
     type: String,
-    required: true
+    required: true,
   },
   country: {
     type: String,
-    required: true
+    required: true,
   },
   artistName: {
     type: String,
-    required: true
+    required: true,
   },
   birthDate: {
     type: Date,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   musicRole: {
     type: String,
-    required: true
+    required: true,
   },
   labelName: {
     type: String,
-    required: true
+    required: true,
   },
   profileImage: {
     type: String,
-    required: true
+    required: true,
   },
   ISRCAgency: {
     type: String,
-    required: true
+    required: true,
   },
   relevantLink: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
-module.exports = mongoose.model('Form', FormSchema);
+module.exports = mongoose.model("Form", FormSchema);
