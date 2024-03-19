@@ -3,8 +3,11 @@ import styles from "./styles.module.css";
 import { SlArrowRightCircle } from "react-icons/sl";
 import { logo, logo_google } from "../../assets/images";
 
-const Home = (userDetails) => {
-  const user = userDetails.user;
+const Home = ({ user, logout }) => {
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -48,10 +51,6 @@ const Home = (userDetails) => {
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
-  };
-
-  const logout = () => {
-    window.open(`${process.env.REACT_APP_API_URL}/auth/logout`, "_self");
   };
 
   return (
