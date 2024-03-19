@@ -28,17 +28,33 @@ function App() {
     return <div>Loading...</div>;
   }
 
+  const handleLogout = async () => {
+    try {
+      const url = `${process.env.REACT_APP_API_URL}/auth/logout`;
+      await axios.get(url, { withCredentials: true });
+      setUser(null);
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   return (
     <div className="container">
       <Routes>
         <Route
           path="/login"
-          element={user ? <Navigate to="/" replace /> : <Login />}
+          element={
+            user ? <Navigate to="/" replace /> : <Login setUser={setUser} />
+          }
         />
         <Route
           path="/"
           element={
-            user ? <Home user={user} /> : <Navigate to="/login" replace />
+            user ? (
+              <Home user={user} logout={handleLogout} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
           }
         />
       </Routes>
