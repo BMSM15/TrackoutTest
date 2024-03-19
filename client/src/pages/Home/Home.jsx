@@ -59,19 +59,17 @@ const Home = (userDetails) => {
       <div className={styles.nav_container}>
         <img src={logo} alt="Logo" className={styles.logo} />
         <div className={styles.nav_avatar}>
-          <a href="http://localhost:3000" onClick={logout}>
-            About
-          </a>
-
-          {/*<img className={styles.avatar} src={user.picture} alt="Avatar" />*/}
+          <a onClick={logout}>About</a>
+          <img className={styles.avatar} src={user.picture} alt="Avatar" />
         </div>
       </div>
       <div className={styles.home_container}>
         <h1>Registration</h1>
         <div className={styles.home_form_container}>
-          <h1>Personal Details</h1>
-          <hr className={styles.hr1}></hr>
           <form onSubmit={handleSubmit}>
+            <h1>
+              Personal Details <hr className={styles.hr}></hr>
+            </h1>
             <div className={styles.home_personal}>
               <div className={styles.home_personal_details}>
                 <div className={styles.home_personal_details_box}>
@@ -147,7 +145,7 @@ const Home = (userDetails) => {
               </div>
             </div>
             <h1>
-              Music Details <hr className={styles.hr2}></hr>
+              Music Details <hr className={styles.hr}></hr>
             </h1>
             <div className={styles.home_personal}>
               <div className={styles.home_personal_details}>
@@ -167,14 +165,13 @@ const Home = (userDetails) => {
                   <input
                     type="file"
                     name="profileImage"
-                    className={styles.input}
+                    placeholder="Upload Image"
                     id="img"
+                    accept="image/*"
+                    className={styles.inputfile}
                     value={formData.profileImage}
                     onChange={handleFileChange}
                   />
-                  {/*<label className={styles.inputfile2} for="img">
-                  Profile Image (PNG/JPG)
-                </label>*/}
                 </div>
               </div>
               <div className={styles.home_personal_details}>
@@ -211,6 +208,9 @@ const Home = (userDetails) => {
             </div>
           </form>
         </div>
+      </div>
+      <div className={styles.footer_container}>
+        <span>Copyright 2023 - ALCI. All rights reserved.</span>
       </div>
     </>
   );
