@@ -3,292 +3,298 @@
   src: url(../../fonts/Manrope-Regular.ttf);
 }
 
-.login_container {
-  background: url(../../assets/images/bg_login.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 2500px;
-  height: 100vh;
-  flex-shrink: 0;
-  padding-left: 150px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin: 0 auto;
-  float: none;
-  padding: 150px 0px 150px 150px;
+@media only screen and (min-width: 1200px) {
+  .login_container {
+    background: url(../../assets/images/bg_login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 2500px;
+    height: 100vh;
+    flex-shrink: 0;
+    padding-left: 150px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0 auto;
+    float: none;
+    padding: 150px 0px 150px 150px;
+  }
+
+  .login_form_container {
+    width: 42%;
+    height: 870px;
+    flex-shrink: 0;
+    display: flex;
+  }
+
+  .form_container {
+    width: 788px;
+    height: 870px;
+    flex-shrink: 0;
+    opacity: 0.7;
+    background: rgba(138, 138, 138, 0.5);
+    padding-left: 70px;
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+  }
+
+  .google_btn {
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    opacity: 0.7;
+    background: rgba(138, 138, 138, 0.3);
+    font-family: "Manrope";
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    width: 60%;
+    padding: 10px;
+  }
+
+  .logo_google {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+  .form_container_division {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+  }
+
+  .form_container_division h2 {
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .line {
+    width: 25%;
+    height: 1px;
+    opacity: 0.5;
+    background: #fff;
+    box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 104px;
+    height: 70px;
+    margin-top: 50px;
+  }
+
+  .form_container h1 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Manrope";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 128%; /* 64px */
+    letter-spacing: -1px;
+    background: linear-gradient(
+      104deg,
+      #fff 27.22%,
+      rgba(255, 255, 255, 0) 124.03%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 90px;
+  }
+
+  .form_container_labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 100px;
+  }
+
+  .form_container_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 90%;
+  }
+
+  .divbutton {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input {
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    opacity: 0.7;
+    background: rgba(138, 138, 138, 0.3);
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 10px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+    width: 65%;
+  }
+  ::placeholder {
+    color: #fff;
+  }
+
+  .signin_btn {
+    display: flex;
+    border-radius: 10px;
+    opacity: 0.9;
+    background: linear-gradient(0deg, #2379b5 0%, #2379b5 100%),
+      rgba(138, 138, 138, 0.3);
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    color: #fff;
+  }
+
+  .login_info_container {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    flex-shrink: 0;
+    border-radius: 0px 20px 20px 0px;
+    background: linear-gradient(
+      139deg,
+      #020202 86.72%,
+      rgba(2, 2, 2, 0) 130.82%
+    );
+  }
+
+  .login_info_container h1 {
+    font-family: "Manrope";
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100px;
+    letter-spacing: -1.6px;
+    text-transform: capitalize;
+    color: #fff;
+    background: linear-gradient(
+      85deg,
+      #fff 44.29%,
+      rgba(255, 255, 255, 0.47) 99.78%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 100px;
+  }
+
+  .description {
+    position: absolute;
+    top: 240px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 128%; /* 25.6px */
+    color: #fff !important;
+    background: linear-gradient(
+      104deg,
+      #fff 80.04%,
+      rgba(255, 255, 255, 0) 124.03%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 110px;
+  }
+
+  .description2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    padding-top: 50px;
+    padding-left: 170px;
+  }
+
+  .line2 {
+    width: 1px;
+    height: 400px;
+    opacity: 0.3;
+    background: #fff;
+    box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
+    flex-shrink: 1;
+  }
+
+  .linediv {
+    width: 50px;
+    height: 100%;
+  }
+
+  .description2_group_text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description2_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .description2_text p {
+    font-family: "Manrope";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 128%; /* 51.2px */
+    letter-spacing: -0.8px;
+    color: #fff;
+  }
+
+  .description2_text div {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Manrope";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 128%; /* 23.04px */
+    color: #fff;
+    align-self: center;
+    padding-left: 30px;
+    background: linear-gradient(
+      104deg,
+      #fff 80.04%,
+      rgba(255, 255, 255, 0) 124.03%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-.login_form_container {
-  width: 42%;
-  height: 870px;
-  flex-shrink: 0;
-  display: flex;
-}
-
-.form_container {
-  width: 788px;
-  height: 870px;
-  flex-shrink: 0;
-  opacity: 0.7;
-  background: rgba(138, 138, 138, 0.5);
-  padding-left: 70px;
-  border-radius: 20px;
-  border: 1px solid #d9d9d9;
-}
-
-.google_btn {
-  border-radius: 20px;
-  border: 1px solid #d9d9d9;
-  opacity: 0.7;
-  background: rgba(138, 138, 138, 0.3);
-  font-family: "Manrope";
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  width: 60%;
-  padding: 10px;
-}
-
-.logo_google {
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-  margin-right: 20px;
-}
-
-.form_container_division {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 60%;
-}
-
-.form_container_division h2 {
-  text-align: center;
-  font-family: "Manrope";
-  font-size: 20px;
-  font-style: normal;
-  color: #fff;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.line {
-  width: 25%;
-  height: 1px;
-  opacity: 0.5;
-  background: #fff;
-  box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
-}
-
-.logo {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 104px;
-  height: 70px;
-  margin-top: 50px;
-}
-
-.form_container h1 {
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Manrope";
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 128%; /* 64px */
-  letter-spacing: -1px;
-  background: linear-gradient(
-    104deg,
-    #fff 27.22%,
-    rgba(255, 255, 255, 0) 124.03%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 90px;
-}
-
-.form_container_labels {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  margin-top: 100px;
-}
-
-.form_container_login {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  width: 90%;
-}
-
-.divbutton {
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.input {
-  border-radius: 20px;
-  border: 1px solid #d9d9d9;
-  opacity: 0.7;
-  background: rgba(138, 138, 138, 0.3);
-  font-family: "Manrope";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 10px;
-  padding: 10px;
-  color: #fff;
-  margin-bottom: 20px;
-  width: 65%;
-}
-::placeholder {
-  color: #fff;
-}
-
-.signin_btn {
-  display: flex;
-  border-radius: 10px;
-  opacity: 0.9;
-  background: linear-gradient(0deg, #2379b5 0%, #2379b5 100%),
-    rgba(138, 138, 138, 0.3);
-  border: none;
-  width: 80%;
-  height: 50px;
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: "Manrope";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 1.6px;
-  color: #fff;
-}
-
-.login_info_container {
-  position: relative;
-  width: 1000px;
-  height: 100%;
-  flex-shrink: 0;
-  border-radius: 0px 20px 20px 0px;
-  background: linear-gradient(139deg, #020202 86.72%, rgba(2, 2, 2, 0) 130.82%);
-}
-
-.login_info_container h1 {
-  font-family: "Manrope";
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 100px;
-  letter-spacing: -1.6px;
-  text-transform: capitalize;
-  color: #fff;
-  background: linear-gradient(
-    85deg,
-    #fff 44.29%,
-    rgba(255, 255, 255, 0.47) 99.78%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-left: 100px;
-}
-
-.description {
-  position: absolute;
-  top: 240px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Manrope";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 128%; /* 25.6px */
-  color: #fff !important;
-  background: linear-gradient(
-    104deg,
-    #fff 80.04%,
-    rgba(255, 255, 255, 0) 124.03%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-left: 110px;
-}
-
-.description2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
-  padding-top: 50px;
-  padding-left: 170px;
-}
-
-.line2 {
-  width: 1px;
-  height: 400px;
-  opacity: 0.3;
-  background: #fff;
-  box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
-  flex-shrink: 1;
-}
-
-.linediv {
-  width: 50px;
-  height: 100%;
-}
-
-.description2_group_text {
-  display: flex;
-  flex-direction: column;
-}
-
-.description2_text {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-}
-
-.description2_text p {
-  font-family: "Manrope";
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 128%; /* 51.2px */
-  letter-spacing: -0.8px;
-  color: #fff;
-}
-
-.description2_text div {
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Manrope";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 128%; /* 23.04px */
-  color: #fff;
-  align-self: center;
-  padding-left: 30px;
-  background: linear-gradient(
-    104deg,
-    #fff 80.04%,
-    rgba(255, 255, 255, 0) 124.03%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 1199px) {
   .login_info_container {
     display: none;
   }
@@ -297,16 +303,167 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
   }
 
   .login_form_container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+    opacity: 0.7;
+    background: rgba(138, 138, 138, 0.5);
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
   }
 
   .form_container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .login_form_container {
+    width: 90%;
+    flex-shrink: 0;
+    display: flex;
+  }
+
+  .google_btn {
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    opacity: 0.7;
+    background: rgba(138, 138, 138, 0.3);
+    font-family: "Manrope";
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .logo_google {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+  .form_container_division {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .form_container_division h2 {
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .line {
+    width: 25%;
+    height: 1px;
+    opacity: 0.5;
+    background: #fff;
+    box-shadow: 0px 4px 10px 0px #fff, 0px -4px 10px 0px #fff;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 104px;
+    height: 70px;
+    margin-top: 50px;
+  }
+
+  .form_container h1 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Manrope";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 128%; /* 64px */
+    letter-spacing: -1px;
+    background: linear-gradient(
+      104deg,
+      #fff 27.22%,
+      rgba(255, 255, 255, 0) 124.03%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .form_container_labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .form_container_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+  }
+
+  .divbutton {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input {
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    opacity: 0.7;
+    background: rgba(138, 138, 138, 0.3);
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 10px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  ::placeholder {
+    color: #fff;
+  }
+
+  .signin_btn {
+    display: flex;
+    border-radius: 10px;
+    opacity: 0.9;
+    background: linear-gradient(0deg, #2379b5 0%, #2379b5 100%),
+      rgba(138, 138, 138, 0.3);
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    color: #fff;
   }
 }
