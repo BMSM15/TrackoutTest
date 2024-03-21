@@ -28,7 +28,7 @@
   }
 
   .form_container {
-    width: 788px;
+    width: 90%;
     height: 870px;
     flex-shrink: 0;
     opacity: 0.7;
@@ -176,7 +176,7 @@
 
   .login_info_container {
     position: relative;
-    width: 1000px;
+    width: 900px;
     height: 100%;
     flex-shrink: 0;
     border-radius: 0px 20px 20px 0px;
