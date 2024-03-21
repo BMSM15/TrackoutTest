@@ -3,11 +3,13 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
+import Introduction from "./pages/Introduction/Introduction";
 import axios from "axios";
 
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -56,6 +58,13 @@ function App() {
             ) : (
               <Navigate to="/login" replace />
             )
+          }
+        />
+        <Route
+          path="/introduction"
+          element={
+           <Introduction user={user} logout={handleLogout} 
+           sidebar={sidebar} setSidebar={setSidebar}  />
           }
         />
       </Routes>
