@@ -1,10 +1,43 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
 import { SlArrowRightCircle } from "react-icons/sl";
 import { logo, logo_google } from "../../assets/images";
 
 const Introduction = ({ user, logout, sidebar, setSidebar }) => {
+  const navigate = useNavigate();
   const showSidebar = () => setSidebar(!sidebar);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [link, setLink] = useState("");
+  const [rights, setRights] = useState({
+    master: false,
+    mechanical: false,
+    performance: false,
+    neighboring: false,
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("/api/forms/newForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        link,
+        rights,
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    navigate("/");
+  };
 
   return (
     <>
@@ -47,60 +80,97 @@ const Introduction = ({ user, logout, sidebar, setSidebar }) => {
         }
       >
         <div className={sidebar ? styles.formactive : styles.form}>
-          <p>Join the Waitlist by filling the following information:</p>
-          <div className={styles.input_text_section}>
-            <div className={styles.input_text}>
-              <label>
-                What’s your name?<span>*</span>
-              </label>
-              <input type="text" placeholder="Write your real or artist name" />
-            </div>
-            <div className={styles.input_text}>
-              <label>
-                What’s your e-mail?<span>*</span>
-              </label>
-              <input type="text" placeholder="Write your e-mail address" />
-            </div>
-            <div className={styles.input_text}>
-              <label>
-                Link<span>*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Paste a Link (Spotify, Instagram or Website)"
-              />
-            </div>
-            <div className={styles.input_checkboxgroup}>
-              <p>What type of Royalties do you collect?</p>
-              <div className={styles.input_checkboxdivision}>
-                <div className={styles.input_checkbox_minigroup}>
-                  <div className={styles.input_checkbox}>
-                    <input type="checkbox" />
-                    <label>Master Rights</label>
+          <form onSubmit={handleSubmit}>
+            <p>Join the Waitlist by filling the following information:</p>
+            <div className={styles.input_text_section}>
+              <div className={styles.input_text}>
+                <label>
+                  What’s your name?<span>*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Write your real or artist name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className={styles.input_text}>
+                <label>
+                  What’s your e-mail?<span>*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Write your e-mail address"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className={styles.input_text}>
+                <label>
+                  Link<span>*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Paste a Link (Spotify, Instagram or Website)"
+                  onChange={(e) => setLink(e.target.value)}
+                />
+              </div>
+              <div className={styles.input_checkboxgroup}>
+                <p>What type of Royalties do you collect?</p>
+                <div className={styles.input_checkboxdivision}>
+                  <div className={styles.input_checkbox_minigroup}>
+                    <div className={styles.input_checkbox}>
+                      <input
+                        type="checkbox"
+                        onChange={(e) =>
+                          setRights({ ...rights, master: e.target.checked })
+                        }
+                      />
+                      <label>Master Rights</label>
+                    </div>
+                    <div className={styles.input_checkbox}>
+                      <input
+                        type="checkbox"
+                        onChange={(e) =>
+                          setRights({ ...rights, mechanical: e.target.checked })
+                        }
+                      />
+                      <label>Mechanical Rights</label>
+                    </div>
                   </div>
-                  <div className={styles.input_checkbox}>
-                    <input type="checkbox" />
-                    <label>Mechanical Rights</label>
-                  </div>
-                </div>
-                <div className={styles.input_checkbox_minigroup}>
-                  <div className={styles.input_checkbox}>
-                    <input type="checkbox" />
-                    <label>Performance Rights</label>
-                  </div>
-                  <div className={styles.input_checkbox}>
-                    <input type="checkbox" />
-                    <label>Neighboring Rights</label>
+                  <div className={styles.input_checkbox_minigroup}>
+                    <div className={styles.input_checkbox}>
+                      <input
+                        type="checkbox"
+                        onChange={(e) =>
+                          setRights({
+                            ...rights,
+                            performance: e.target.checked,
+                          })
+                        }
+                      />
+                      <label>Performance Rights</label>
+                    </div>
+                    <div className={styles.input_checkbox}>
+                      <input
+                        type="checkbox"
+                        onChange={(e) =>
+                          setRights({
+                            ...rights,
+                            neighboring: e.target.checked,
+                          })
+                        }
+                      />
+                      <label>Neighboring Rights</label>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div className={styles.button}>
+                <button type="submit" className={styles.submit_button}>
+                  Submit
+                </button>
+              </div>
             </div>
-            <div className={styles.button}>
-              <button onClick={showSidebar} className={styles.submit_button}>
-                Submit
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
       <div className={styles.intro_footer}>

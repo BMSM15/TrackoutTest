@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Joi = require("joi");
 
 const FormSchema = new mongoose.Schema({
   fullName: {
@@ -43,8 +44,6 @@ const FormSchema = new mongoose.Schema({
 });
 
 const Form = mongoose.model("form", FormSchema);
-
-const Joi = require("joi");
 
 const validateForm = (form) => {
   const schema = Joi.object({

@@ -39,8 +39,30 @@ const Home = ({ user, logout }) => {
     }
   };
 
+  const checkEmailExists = async (email) => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/forms/checkEmail?email=${email}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const responseData = await response.json();
+      return responseData.exists; // assumes the server returns { exists: true } or { exists: false }
+    } catch (error) {
+      console.error("Error:", error);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const emailExists = await checkEmailExists(formData.email);
+    if (emailExists) {
+      alert("Email already exists!");
+      return;
+    }
 
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
@@ -75,8 +97,8 @@ const Home = ({ user, logout }) => {
       <div className={styles.nav_container}>
         <img src={logo} alt="Logo" className={styles.logo} />
         <div className={styles.nav_avatar}>
-          <a onClick={logout}>About</a>
-          <img className={styles.avatar} src={user.picture} alt="Avatar" />
+          <a>About</a>
+          <img className={styles.avatar} src={user.image} alt="Avatar" />
         </div>
       </div>
       <div className={styles.home_container}>
