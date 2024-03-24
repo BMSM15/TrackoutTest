@@ -31,7 +31,6 @@ const FormSchema = new mongoose.Schema({
   },
   profileImage: {
     type: String,
-    required: true,
   },
   ISRCAgency: {
     type: String,
@@ -56,7 +55,7 @@ const validateForm = (form) => {
     email: Joi.string().email().required(),
     musicRole: Joi.string().required(),
     labelName: Joi.string().required(),
-    profileImage: Joi.string().uri().required(),
+    profileImage: Joi.string().optional(),
     ISRCAgency: Joi.string().required(),
     relevantLink: Joi.string().uri().required(),
   });

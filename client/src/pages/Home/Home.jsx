@@ -4,7 +4,6 @@ import { SlArrowRightCircle } from "react-icons/sl";
 import { logo, logo_google } from "../../assets/images";
 
 const Home = ({ user, logout }) => {
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
@@ -17,7 +16,6 @@ const Home = ({ user, logout }) => {
     email: "",
     musicRole: "",
     labelName: "",
-    profileImage: "",
     ISRCAgency: "",
     relevantLink: "",
   });
@@ -26,8 +24,31 @@ const Home = ({ user, logout }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const [file, setFile] = useState(null);
+  const [imageSrc, setImageSrc] = useState(null);
+
+  const handleFileChange = (e) => {
+    let file = e.target.files.item(0);
+    var fr = new FileReader();
+    if (file) {
+      fr.onloadend = (e) => {
+        setImageSrc(e.target.result);
+        setFile(file); // set the file state
+      };
+      fr.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const data = new FormData();
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+    if (file) {
+      data.append("profileImage", file);
+    }
 
     try {
       const response = await fetch("http://localhost:5000/api/forms", {
@@ -38,19 +59,15 @@ const Home = ({ user, logout }) => {
         body: JSON.stringify(formData),
       });
 
-      console.log(response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-      const data = await response.json();
-      console.log(data);
+      const responseData = await response.json();
+      console.log(responseData);
     } catch (error) {
       console.error("Error:", error);
     }
-  };
-
-  const [file, setFile] = useState(null);
-
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
   };
 
   return (
@@ -78,7 +95,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Enter your name"
                     name="fullName"
                     className={styles.input}
-                    value={formData.fullName}
                     onChange={handleChange}
                   />
                 </div>
@@ -89,7 +105,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Where you’re based"
                     name="country"
                     className={styles.input}
-                    value={formData.country}
                     onChange={handleChange}
                   />
                 </div>
@@ -102,7 +117,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Enter your artist name"
                     name="artistName"
                     className={styles.input}
-                    value={formData.artistName}
                     onChange={handleChange}
                   />
                 </div>
@@ -113,7 +127,6 @@ const Home = ({ user, logout }) => {
                     placeholder="dd/mm/aaaa"
                     name="birthDate"
                     className={styles.inputdate}
-                    value={formData.birthDate}
                     onChange={handleChange}
                   />
                 </div>
@@ -126,7 +139,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Enter your email"
                     name="email"
                     className={styles.input}
-                    value={formData.email}
                     onChange={handleChange}
                   />
                 </div>
@@ -137,7 +149,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Label"
                     name="musicRole"
                     className={styles.input}
-                    value={formData.musicRole}
                     onChange={handleChange}
                   />
                 </div>
@@ -155,7 +166,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Enter your label name"
                     name="labelName"
                     className={styles.input}
-                    value={formData.labelName}
                     onChange={handleChange}
                   />
                 </div>
@@ -166,9 +176,7 @@ const Home = ({ user, logout }) => {
                     name="profileImage"
                     placeholder="Upload Image"
                     id="img"
-                    accept="image/*"
                     className={styles.inputfile}
-                    value={formData.profileImage}
                     onChange={handleFileChange}
                   />
                 </div>
@@ -181,7 +189,6 @@ const Home = ({ user, logout }) => {
                     placeholder="ASCAP (USA)"
                     name="ISRCAgency"
                     className={styles.input}
-                    value={formData.ISRCAgency}
                     onChange={handleChange}
                   />
                 </div>
@@ -194,7 +201,6 @@ const Home = ({ user, logout }) => {
                     placeholder="Spotify, Instagram, Website"
                     name="relevantLink"
                     className={styles.input}
-                    value={formData.relevantLink}
                     onChange={handleChange}
                   />
                 </div>

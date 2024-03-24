@@ -3,12 +3,12 @@
   src: url(../../fonts/Manrope-Regular.ttf);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1500px) {
   .login_container {
     background: url(../../assets/images/bg_login.png);
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 2500px;
+    width: 200%;
     height: 100vh;
     flex-shrink: 0;
     padding-left: 150px;
@@ -21,15 +21,16 @@
   }
 
   .login_form_container {
-    width: 42%;
-    height: 870px;
+    width: 25%;
+    max-height: 872px;
     flex-shrink: 0;
     display: flex;
   }
 
   .form_container {
     width: 90%;
-    height: 870px;
+    max-width: 788px;
+    height: 872px;
     flex-shrink: 0;
     opacity: 0.7;
     background: rgba(138, 138, 138, 0.5);
@@ -176,8 +177,9 @@
 
   .login_info_container {
     position: relative;
-    width: 900px;
-    height: 100%;
+    max-width: 1000px;
+    min-width: 885px;
+    width: 100%;
     flex-shrink: 0;
     border-radius: 0px 20px 20px 0px;
     background: linear-gradient(
@@ -294,7 +296,7 @@
   }
 }
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1499px) {
   .login_info_container {
     display: none;
   }
@@ -304,6 +306,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    height: 130vh;
   }
 
   .login_form_container {
@@ -315,6 +318,9 @@
     background: rgba(138, 138, 138, 0.5);
     border-radius: 20px;
     border: 1px solid #d9d9d9;
+    width: 90%;
+    flex-shrink: 0;
+    margin-bottom: 40px;
   }
 
   .form_container {
@@ -322,12 +328,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .login_form_container {
-    width: 90%;
-    flex-shrink: 0;
-    display: flex;
   }
 
   .google_btn {

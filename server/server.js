@@ -42,6 +42,8 @@ connect();
 app.use(express.json());
 app.use("/auth", authRoute);
 app.use("/api/forms", formRoute);
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 const port = process.env.PORT || 5000;
