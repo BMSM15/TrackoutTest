@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Form, validateForm } = require("../modules/Form");
 const { NewForm, validateNewForm } = require("../modules/NewForm");
 
+
 router.post("/", async (req, res) => {
   const { error } = validateForm(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -54,7 +55,10 @@ router.post("/newForm", async (req, res) => {
 
   const { name, email, link, rights } = req.body;
 
-  let form = new NewForm({
+  let form = await NewForm.findOne({ email });
+  if (form) return res.status(400).send("Email already exists");
+
+  form = new NewForm({
     name,
     email,
     link,

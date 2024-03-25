@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="container">
       <Routes>
-        <Route
+        {/*<Route
           path="/login"
           element={
             user ? <Navigate to="/" replace /> : <Login setUser={setUser} />
@@ -59,12 +59,11 @@ function App() {
               <Navigate to="/login" replace />
             )
           }
-        />
+        />*/}
         <Route
-          path="/introduction"
+          path="/"
           element={
-           <Introduction user={user} logout={handleLogout} 
-           sidebar={sidebar} setSidebar={setSidebar}  />
+           <Introduction sidebar={sidebar} setSidebar={setSidebar}  />
           }
         />
       </Routes>

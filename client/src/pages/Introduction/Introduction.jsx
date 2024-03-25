@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
-import { SlArrowRightCircle } from "react-icons/sl";
-import { logo, logo_google } from "../../assets/images";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
-const Introduction = ({ user, logout, sidebar, setSidebar }) => {
+const Introduction = ({ user, logout }) => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
   const showSidebar = () => setSidebar(!sidebar);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,8 +21,38 @@ const Introduction = ({ user, logout, sidebar, setSidebar }) => {
     neighboring: false,
   });
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const handleErrorClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setErrorOpen(false);
+  };
+
+  const handleSuccessClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setSuccessOpen(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorOpen(true);
+      return;
+    }
 
     const response = await fetch("/api/forms/newForm", {
       method: "POST",
@@ -33,14 +67,41 @@ const Introduction = ({ user, logout, sidebar, setSidebar }) => {
       }),
     });
 
-    const data = await response.json();
-    console.log(data);
+    const data = await response.text();
 
-    navigate("/");
+    if (response.status === 400 && data === "Email already exists") {
+      setOpen(true);
+    } else {
+      console.log(data);
+      setSuccessOpen(true);
+    }
   };
 
   return (
     <>
+      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          That email was already used!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={successOpen}
+        autoHideDuration={6000}
+        onClose={handleSuccessClose}
+      >
+        <Alert onClose={handleSuccessClose} severity="success">
+          Form submitted successfully
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={errorOpen}
+        autoHideDuration={6000}
+        onClose={handleErrorClose}
+      >
+        <Alert onClose={handleErrorClose} severity="error">
+          Email must be valid!
+        </Alert>
+      </Snackbar>
       <div className={styles.nav_container}>
         <span>
           PRISMA <p className={styles.p1}>PROTOCOL</p>{" "}
